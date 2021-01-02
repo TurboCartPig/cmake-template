@@ -1,5 +1,9 @@
-set(DOXYGEN_EXTRACT_ALL ON)
-set(DOXYGEN_BUILTIN_STL_SUPPORT ON)
+find_package(Doxygen REQUIRED COMPONENTS doxygen)
 
-doxygen_add_docs(docs project/lib.h "${CMAKE_CURRENT_SOURCE_DIR}/mainpage.md"
-                 WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/include")
+set(DOXYGEN_EXTRACT_ALL YES)
+set(DOXYGEN_BUILTIN_STL_SUPPORT YES)
+
+file(GLOB HEADER_FILES CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/include/*/*.h")
+
+doxygen_add_docs(docs ${HEADER_FILES} "${CMAKE_CURRENT_SOURCE_DIR}/mainpage.md"
+                 WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})

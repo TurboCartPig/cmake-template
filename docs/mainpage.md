@@ -1,4 +1,4 @@
-# Project docs
+# CMake Template docs
 
 1. Clone the template from this repository
 2. Modify names and such

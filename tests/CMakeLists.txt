@@ -1,7 +1,8 @@
-find_package(Catch2)
+find_package(Catch2 REQUIRED)
 
-message("-- Enabling tests")
+file(GLOB SOURCE_FILES CONFIGURE_DEPENDS
+     "${CMAKE_CURRENT_SOURCE_DIR}/*/*.test.cpp")
 
-add_executable(tests test-lib.cpp)
+add_executable(tests tests.cpp ${SOURCE_FILES})
 target_compile_options(tests PRIVATE ${COMPILER_WARNINGS_AND_ERRORS})
-target_link_libraries(tests PRIVATE Catch2::Catch2 lib)
+target_link_libraries(tests PRIVATE cmake-template Catch2::Catch2)

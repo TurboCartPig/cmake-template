@@ -56,8 +56,6 @@ _deps
 
 ### My Custom stuff ###
 
-*.pdf
-
 .vscode/
 .idea/
 .vs/
