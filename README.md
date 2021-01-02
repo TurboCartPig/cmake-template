@@ -43,7 +43,7 @@ make doc
 - include/<other_librariy> - The public header files for the library defined above.
 - res - Contains non-code resources used by the project at runtime.
 
-#### Epemiral directories
+#### Ephemeral directories
 
 - build - Contains build artifacts, could have subdirectories like `debug` or `msvc-x86_64-release`.
 
